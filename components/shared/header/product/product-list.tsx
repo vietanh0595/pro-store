@@ -9,6 +9,7 @@ const ProductList = ({
   title?: string;
   limit?: number;
 }) => {
+  console.log('data', data)
   // Apply limit if provided, otherwise show all products
   const limitedData = limit ? data.slice(0, limit) : data;
 
