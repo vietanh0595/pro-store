@@ -17,5 +17,5 @@ export const signUpDefaultValues = {
   name:"",
   email: "",
   password: "",
-  defaultPassword: ""
+  confirmPassword: ""
 };
