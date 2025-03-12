@@ -23,7 +23,6 @@ const SignIn = async (props: {
     callbackUrl: string;
   }>;
 }) => {
-  console.log('sign in init')
   const { callbackUrl } = await props.searchParams;
   const session = await auth();
   if (session) {
