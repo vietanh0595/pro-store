@@ -1,5 +1,6 @@
 import { NextAuthConfig } from "next-auth";
 import { NextResponse } from "next/server";
+import { CART_SESSION_EXP } from "./types";
 
 export const authConfig = {
   providers: [], // Required by NextAuthConfig type
@@ -21,7 +22,7 @@ export const authConfig = {
         });
 
         // Set the newly generated sessionCartId in the response cookies
-        response.cookies.set("sessionCartId", sessionCartId);
+        response.cookies.set("sessionCartId", sessionCartId, { maxAge: CART_SESSION_EXP });
 
         // Return the response with the sessionCartId set
         return response;
