@@ -39,10 +39,10 @@ export async function signOutUser() {
 export async function signUp(prevState: unknown, formData: FormData) {
   try {
     const user = signUpFormSchema.parse({
-      name: formData.get('name'),
-      email: formData.get('email'),
-      confirmPassword: formData.get('confirmPassword'),
-      password: formData.get('password'),
+      name: formData.get("name"),
+      email: formData.get("email"),
+      confirmPassword: formData.get("confirmPassword"),
+      password: formData.get("password"),
     });
 
     const plainPassword = user.password;
@@ -57,12 +57,12 @@ export async function signUp(prevState: unknown, formData: FormData) {
       },
     });
 
-    await signIn('credentials', {
+    await signIn("credentials", {
       email: user.email,
       password: plainPassword,
     });
 
-    return { success: true, message: 'User created successfully' };
+    return { success: true, message: "User created successfully" };
   } catch (error) {
     if (isRedirectError(error)) {
       throw error;
@@ -73,4 +73,14 @@ export async function signUp(prevState: unknown, formData: FormData) {
       message: formatError(error),
     };
   }
+}
+
+// Get user by ID
+export async function getUserById(userId: string) {
+  const user = await prisma.user.findFirst({
+    where: { id: userId },
+  });
+
+  if (!user) throw new Error("User not found");
+  return user;
 }

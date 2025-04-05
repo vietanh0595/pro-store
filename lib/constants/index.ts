@@ -14,8 +14,19 @@ export const signInDefaultValues = {
 };
 
 export const signUpDefaultValues = {
-  name:"",
+  name: "",
   email: "",
   password: "",
-  confirmPassword: ""
+  confirmPassword: "",
 };
+
+export const shippingAddressDefaultValues = {
+  fullName: "John Doe",
+  streetAddress: "123 Main St",
+  city: "Anytown",
+  postalCode: "12345",
+  country: "USA",
+};
+
+// expiration time of cart session in seconds
+export const CART_SESSION_EXP = 60;

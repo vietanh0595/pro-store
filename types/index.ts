@@ -3,6 +3,7 @@ import {
   cartItemSchema,
   insertCartSchema,
   insertProductSchema,
+  shippingAddressSchema,
 } from "@/lib/validator";
 
 export type Product = z.infer<typeof insertProductSchema> & {
@@ -14,6 +15,4 @@ export type Product = z.infer<typeof insertProductSchema> & {
 
 export type Cart = z.infer<typeof insertCartSchema>;
 export type CartItem = z.infer<typeof cartItemSchema>;
-
-// expiration time of cart session in seconds
-export const CART_SESSION_EXP = 60;
+export type ShippingAddress = z.infer<typeof shippingAddressSchema>;

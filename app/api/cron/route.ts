@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/db/prisma";
-import { CART_SESSION_EXP } from "@/types";
+import { CART_SESSION_EXP } from "@/lib/constants";
 
 export async function GET() {
   await prisma.cart.deleteMany({

@@ -1,6 +1,6 @@
 import { NextAuthConfig } from "next-auth";
 import { NextResponse } from "next/server";
-import { CART_SESSION_EXP } from "./types";
+import { CART_SESSION_EXP } from "./lib/constants";
 
 export const authConfig = {
   providers: [], // Required by NextAuthConfig type
