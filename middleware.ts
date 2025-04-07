@@ -2,8 +2,6 @@ import NextAuth from "next-auth";
 import { authConfig } from "./auth.config";
 import { NextRequest, NextResponse } from "next/server";
 
-// export const { auth: middleware } = NextAuth(authConfig);
-
 export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith("/api/cron")) {
     if (

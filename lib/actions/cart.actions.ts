@@ -1,11 +1,11 @@
 "use server";
 
 import { auth } from "@/auth";
-import { CartItem, ShippingAddress } from "@/types";
+import { CartItem } from "@/types";
 import { cookies } from "next/headers";
 import { convertToPlainObject, formatError, round2 } from "../utils";
 import { prisma } from "@/db/prisma";
-import { cartItemSchema, insertCartSchema, shippingAddressSchema } from "../validator";
+import { cartItemSchema, insertCartSchema } from "../validator";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { Prisma } from "@prisma/client";

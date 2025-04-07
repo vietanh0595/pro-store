@@ -3,7 +3,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ShippingAddress } from "@/types";
 import { useRouter } from "next/navigation";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { shippingAddressSchema } from "@/lib/validator";
 import { ControllerRenderProps } from "react-hook-form";
